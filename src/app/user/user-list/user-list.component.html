@@ -1,0 +1,35 @@
+
+<h1 style="margin: 100px 0 100px 700px ;" ><img src="https://www.eam.edu.co/wp-content/uploads/2021/10/logoo.png" alt=""></h1>
+
+<table class="table" style="text-align: center;">
+  <thead>
+
+      <tr >
+        <th scope="col">Id</th>
+        <th scope="col">Nombre Completo</th>
+        <th scope="col">Email</th>
+        <th scope="col">Tipo de Usuario</th>
+        <th scope="col">Fecha de Creacion</th>
+        <th scope="col">Observaciones</th>
+        <th scope="col">Acciones</th>
+    </tr>
+
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+          <td>{{user.id}}</td>
+          <td >{{ user.nombre }} {{ user.apellidos }}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.tipoUsuario}}</td>
+          <td >{{user.fechaCreacion}}</td>
+          <td>{{user.observaciones}}</td>
+          <td>
+              <button type="button" class="btn btn-danger" style="margin-right: 8px;"
+                  (click)="confirmDeleteUser(user.id)">Eliminar</button>
+              <button type="button" class="btn btn-warning" (click)="editUser(user)">Editar</button>
+          </td>
+      </tr>
+  </tbody>
+
+</table>
+
